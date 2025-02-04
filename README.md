@@ -63,5 +63,3 @@ These settings are **stored in Zotero's preferences**, so you only need to enter
   - Try a different AI model (e.g., `gpt-4-turbo` for better quality).
 
 ---
-
-Would you like any refinements or additional sections (e.g., API provider alternatives, screenshots)?
