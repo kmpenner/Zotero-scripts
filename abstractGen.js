@@ -1,3 +1,34 @@
+/*
+ * Zotero AI Abstracts Script
+ *
+ * This script generates abstracts for Zotero items that have PDF attachments but no abstract.
+ * It uses an AI API (such as OpenAI) to process the content and create summaries.
+ *
+ * Installation & Setup:
+ * 1. Open Zotero.
+ * 2. Go to Tools > Developer > Run JavaScript.
+ * 3. Copy and paste this script into the console.
+ * 4. Run the script.
+ * 5. On the first run, you will be prompted to enter:
+ *    - Your OpenAI API key (get one at https://platform.openai.com/api-keys)
+ *    - The API endpoint (default: https://api.openai.com/v1/chat/completions)
+ *    - Your preferred AI model (default: gpt-4o-mini-2024-07-18)
+ * 6. These settings are stored in Zotero preferences, so you only need to enter them once.
+ *
+ * Usage:
+ * - Select one or more Zotero items that have PDF attachments but no abstracts.
+ * - Run this script from the Developer Console.
+ * - The script will process the PDFs, send them to the AI model, and store the generated abstracts.
+ * - Abstracts are saved in the "abstractNote" field of each Zotero item.
+ *
+ * Customization:
+ * - You can change the stored preferences via Tools > Preferences > Advanced > Config Editor.
+ * - Search for "extensions.zotero.abstractGen" to modify API settings.
+ *
+ * Troubleshooting:
+ * - If no abstracts are generated, ensure PDFs contain selectable text.
+ * - If you see an API error, verify your API key, endpoint, and model name.
+ */
 // Helper function to get stored preferences or prompt the user
 function getPreference(prefName, promptMessage, defaultValue) {
     let value = Zotero.Prefs.get(`extensions.zotero.abstractGen.${prefName}`);
